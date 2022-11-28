@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Second" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/paleta_primary</item>
+        <item name="colorPrimaryVariant">@color/paleta_claro</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/paleta_secondary</item>
+        <item name="colorSecondaryVariant">@color/paleta_oscuro</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyTheme" parent="Theme.Second">
+
+        <item name="android:windowIsTranslucent">true</item>
+        <!--                <item name="android:backgroundTint">@color/purple_200</item>-->
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+    <style name="MyTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!--        <item name="windowActionBar">false</item>-->
+        <!--        <item  name="windowNoTitle">true</item> comentario ctrl barra del 7 y ctrl alt L para ajustar codigo-->
+    </style>
+</resources>
