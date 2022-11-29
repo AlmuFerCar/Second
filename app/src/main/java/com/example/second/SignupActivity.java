@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.load.resource.bitmap.Rotate;
 
 public class SignupActivity extends AppCompatActivity {
+//imagen de fondo que se mueve
     ImageView fondo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

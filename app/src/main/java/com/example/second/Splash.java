@@ -14,7 +14,11 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 public class Splash extends AppCompatActivity {
-
+//manifest internet
+// lodo de la app en el manifest y cargar la image asset como launcher icon
+//build gradle module implementar bunpetch
+//quitar action bar en el manifest de cada actividad para que no se creando un theme propio que herede
+// y luego otro que no tenga action bar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

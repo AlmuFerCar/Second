@@ -13,7 +13,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 public class LoginActivity extends AppCompatActivity {
-
+//animaciones en al anim
+//glide para cargar imagenes de fondo y el logo
+//iniciar sign up y main con el onclick del xml de cada boton
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

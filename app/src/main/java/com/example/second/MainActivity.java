@@ -19,6 +19,13 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+
+    //para que se cargue el web view de interent
+    //refrescar con swipe
+    //poner el zoom
+    //menu contextual (carpeta menu xml) on create context menu
+    //appbar (carpeta menu xml) on create option menu
+    //mensajes con toast y snack bar
     private WebView miVisorWeb;
     private SwipeRefreshLayout swipeLayout;
     @Override
@@ -39,23 +46,26 @@ public class MainActivity extends AppCompatActivity {
         // DENTRO del Oncreate
         // cast al Layout SwipeRefresh con el que rodeamos la vista
         // en el xml y le colocamos un listener
-        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
+        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe); //refrescar
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
 
         //La vista dentro es un webview con permiso para zoom
         miVisorWeb = (WebView) findViewById(R.id.vistaweb);
         //  miVisorWeb.getSettings().setJavaScriptEnabled(true);
-        miVisorWeb.getSettings().setBuiltInZoomControls(true);
-        miVisorWeb.loadUrl("https://thispersondoesnotexist.com");
+        miVisorWeb.getSettings().setBuiltInZoomControls(true);//hacer zoom
+        miVisorWeb.loadUrl("https://thispersondoesnotexist.com");//cargar pagina web
 
         swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
     }
+
+    //para el menu al pinchar la imagen de copiar y descargar
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         getMenuInflater().inflate(R.menu.menu_context, menu);
     }
     // DIALOGO MODAL
 
+    //cuando pinchas en el toolbar en el signout aparece un cuadra de diaalogo con los botones y las acciones
     public void showAlertDialogButtonClicked(MainActivity mainActivity) {
 
         // setup the alert builder
@@ -64,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 //        //el dialogo estandar tiene título/icono pero podemos sustituirlo por un XML a medida
         builder.setTitle("Vas a abandorme!");
         builder.setMessage("Where do you go?");
-        builder.setIcon(R.drawable.reloj);
+        builder.setIcon(R.drawable.relojcolor);
         builder.setCancelable(false);
 
 //        // un XML a medida para el diálogo
@@ -108,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
-
+//para refrescar la imagen
     protected SwipeRefreshLayout.OnRefreshListener
             mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
@@ -127,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
             swipeLayout.setRefreshing(false);
         }
     };
+
+    //las opciones cuando pinchas sobre la imagen del web view
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -174,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_appbar, menu);
         return true;
     }
-
+    //las opciones del appbar menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -205,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.item5) {
+            //llama al menu de abandonar, estar aqui, etc
             showAlertDialogButtonClicked(this);
         }
 
